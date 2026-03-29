@@ -1,0 +1,150 @@
+---
+de-DE: 
+    activerecord: 
+        attributes: 
+            doorkeeper/application: 
+                name: "Name"
+                redirect_uri: "Umleitungs-URI"
+        errors: 
+            models: 
+                doorkeeper/application: 
+                    attributes: 
+                        redirect_uri: 
+                            fragment_present: "darf kein Fragment enthalten."
+                            invalid_uri: "muss eine gültige URI sein."
+                            unspecified_scheme: "muss ein Schema angeben."
+                            relative_uri: "muss eine absolute URI sein."
+                            secured_uri: "muss eine HTTPS/SSL-URI sein."
+                            forbidden_uri: "wird vom Server verboten."
+                        scopes: 
+                            not_match_configured: "stimmt nicht mit der Konfiguration auf dem Server überein."
+    doorkeeper: 
+        applications: 
+            confirmations: 
+                destroy: "Bist du dir sicher?"
+            buttons: 
+                edit: "Bearbeiten"
+                destroy: "Zerstören"
+                submit: "Einreichen"
+                cancel: "Abbrechen"
+                authorize: "Autorisieren"
+            form: 
+                error: "Hoppla! Überprüfen Sie Ihr Formular auf mögliche Fehler"
+            help: 
+                confidential: "Es wird eine Anwendung verwendet, bei der das Clientgeheimnis vertraulich behandelt werden kann. Native mobile Apps und Single Page Apps gelten als nicht vertraulich."
+                redirect_uri: "Verwenden Sie eine Zeile pro URI"
+                blank_redirect_uri: "Lassen Sie das Feld leer, wenn Sie Ihren Anbieter für die Verwendung von Client-Anmeldeinformationen, Kennwortanmeldeinformationen des Ressourcenbesitzers oder eines anderen Berechtigungstyps konfiguriert haben, der keine Umleitungs-URI erfordert."
+                scopes: "Trennen Sie Bereiche durch Leerzeichen. Lassen Sie das Feld leer, um die Standardbereiche zu verwenden."
+            edit: 
+                title: "Anwendung bearbeiten"
+            index: 
+                title: "Ihre Bewerbungen"
+                new: "Neue Anwendung"
+                name: "Name"
+                callback_url: "Rückruf-URL"
+                confidential: "Vertraulich?"
+                actions: "Aktionen"
+                confidentiality: 
+                    "yes": "Ja"
+                    "no": "Nein"
+            new: 
+                title: "Neue Anwendung"
+            show: 
+                title: "Anwendung: %{name}"
+                application_id: "UID"
+                secret: "Geheimnis"
+                secret_hashed: "Geheim gehasht"
+                scopes: "Bereiche"
+                confidential: "Vertraulich"
+                callback_urls: "Rückruf-URLs"
+                actions: "Aktionen"
+                not_defined: "Nicht definiert"
+        authorizations: 
+            buttons: 
+                allow: "Erlauben"
+                authorize: "Autorisieren"
+                deny: "Leugnen"
+            error: 
+                title: "Es ist ein Fehler aufgetreten"
+            new: 
+                title: "Autorisierung erforderlich"
+                prompt: "%{client_name} zur Nutzung Ihres Kontos autorisieren?"
+                able_to: "Diese Anwendung kann"
+                logged_in_as: "Sie sind derzeit mit der E-Mail-Adresse %{email} angemeldet. Wenn Sie die Verbindung von einem anderen Konto aus herstellen wollten, können Sie %{logout_link}."
+            show: 
+                title: "Autorisierungscode"
+            form_post: 
+                title: "Senden Sie dieses Formular"
+        authorized_applications: 
+            confirmations: 
+                revoke: "Bist du dir sicher?"
+            buttons: 
+                revoke: "Widerrufen"
+            index: 
+                title: "Ihre autorisierten Anwendungen"
+                application: "Anwendung"
+                created_at: "Erstellt am"
+                date_format: "%Y-%m-%d %H:%M:%S"
+        pre_authorization: 
+            status: "Vorautorisierung"
+        errors: 
+            messages: 
+        # Common error messages
+                invalid_request: 
+                    unknown: "In der Anfrage fehlt ein erforderlicher Parameter, sie enthält einen nicht unterstützten Parameterwert oder ist anderweitig fehlerhaft."
+                    missing_param: "Fehlender erforderlicher Parameter: %{value}."
+                    request_not_authorized: "Die Anfrage muss autorisiert werden. Der erforderliche Parameter für die Autorisierungsanforderung fehlt oder ist ungültig."
+                invalid_redirect_uri: "Die angeforderte Umleitungs-URI ist fehlerhaft oder stimmt nicht mit der Umleitungs-URI des Clients überein."
+                unauthorized_client: "Der Client ist nicht berechtigt, diese Anfrage mit dieser Methode auszuführen."
+                access_denied: "Der Ressourcenbesitzer oder Autorisierungsserver hat die Anfrage abgelehnt."
+                invalid_scope: "Der angeforderte Bereich ist ungültig, unbekannt oder fehlerhaft."
+                invalid_code_challenge_method: "Die Code-Challenge-Methode muss einfach oder S256 sein."
+                server_error: "Auf dem Autorisierungsserver ist ein unerwarteter Zustand aufgetreten, der die Ausführung der Anfrage verhindert hat."
+                temporarily_unavailable: "Der Autorisierungsserver kann die Anfrage derzeit aufgrund einer vorübergehenden Überlastung oder Wartung des Servers nicht verarbeiten."
+        # Configuration error messages
+                credential_flow_not_configured: "Der Fluss der Anmeldeinformationen für das Kennwort des Ressourcenbesitzers ist aufgrund von Doorkeeper.configure.resource_owner_from_credentials fehlgeschlagen unkonfiguriert sein."
+                resource_owner_authenticator_not_configured: "Fehler beim Suchen des Ressourcenbesitzers aufgrund von Doorkeeper.configure.resource_owner_authenticator unkonfiguriert sein."
+                admin_authenticator_not_configured: "Der Zugriff auf das Admin-Panel ist aufgrund von Doorkeeper.configure.admin_authenticator verboten unkonfiguriert sein."
+        # Access grant errors
+                unsupported_response_type: "Der Autorisierungsserver unterstützt diesen Antworttyp nicht."
+                unsupported_response_mode: "Der Autorisierungsserver unterstützt diesen Antwortmodus nicht."
+        # Access token errors
+                invalid_client: "Die Clientauthentifizierung ist aufgrund eines unbekannten Clients, fehlender Clientauthentifizierung oder nicht unterstützter Authentifizierungsmethode fehlgeschlagen."
+                invalid_grant: "Die bereitgestellte Autorisierungszuweisung ist ungültig, abgelaufen, widerrufen, stimmt nicht mit der in der Autorisierungsanforderung verwendeten Umleitungs-URI überein oder wurde an einen anderen Client ausgegeben."
+                unsupported_grant_type: "Der Autorisierungserteilungstyp wird vom Autorisierungsserver nicht unterstützt."
+                invalid_token: 
+                    expired: "Das Zugriffstoken ist abgelaufen"
+                    revoked: "Das Zugriffstoken wurde widerrufen"
+                    unknown: "Das Zugriffstoken ist ungültig"
+                resource_owner_authenticator_not_configured: "Fehler beim Suchen des Ressourcenbesitzers aufgrund von Doorkeeper.configure.resource_owner_authenticator unkonfiguriert sein."
+                server_error: "Auf dem Autorisierungsserver ist ein unerwarteter Zustand aufgetreten, der die Ausführung der Anfrage verhindert hat."
+                temporarily_unavailable: "Der Autorisierungsserver kann die Anfrage derzeit aufgrund einer vorübergehenden Überlastung oder Wartung des Servers nicht verarbeiten."
+                unauthorized_client: "Der Client ist nicht berechtigt, diese Anfrage mit dieser Methode auszuführen."
+                unsupported_grant_type: "Der Autorisierungserteilungstyp wird vom Autorisierungsserver nicht unterstützt."
+                unsupported_response_type: "Der Autorisierungsserver unterstützt diesen Antworttyp nicht."
+                revoke: 
+                    unauthorized: "Sie sind nicht berechtigt, dieses Token zu widerrufen"
+                forbidden_token: 
+                    missing_scope: "Für den Zugriff auf diese Ressource ist der Bereich „ %{oauth_scopes} “ erforderlich."
+        flash: 
+            applications: 
+                create: 
+                    notice: "Anwendung erstellt."
+                destroy: 
+                    notice: "Bewerbung gelöscht."
+                update: 
+                    notice: "Anwendung aktualisiert."
+            authorized_applications: 
+                destroy: 
+                    notice: "Antrag widerrufen."
+        layouts: 
+            admin: 
+                title: "Türhüter"
+                nav: 
+                    oauth2_provider: "OAuth2-Anbieter"
+                    applications: "Anwendungen"
+                    home: "Startseite"
+            application: 
+                title: "OAuth-Autorisierung erforderlich"
+        scopes: 
+            procore_all: "Procore All: Der auf diese Anwendung gewährte Zugriff ist derselbe wie Ihr Zugriff auf Procore."
